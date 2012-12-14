@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'Space Facts' target in the 'Space Facts' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "Utility.h"
+
+//    #define IS_IPHONE ( [[[UIDevice currentDevice] model] isEqualToString:@"iPhone"] )
+    #define IS_IPAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    #define IS_IPHONE ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    #define IS_IPOD ([[[UIDevice currentDevice ] model] isEqualToString:@"iPod touch"])
+    #define IS_HEIGHT_GTE_568 [[UIScreen mainScreen ] bounds].size.height >= 568.0f
+    #define IS_IPHONE5 (IS_IPHONE && IS_HEIGHT_GTE_568)
+    #define IS_RETINA ([[UIScreen mainScreen] scale] == 2.0f)
+
+//    #define LITE_VERSION    1
+
+    //RevMob
+    #define REVMOB_ID @"50b67a981a76640c00000002"
+    #define REVMOB_PLACEMENT_ID @"50b67adc90f0401000000001"
+    #define REVMOB_FULLSCREEN_PLACEMENT_ID @"50b67b169607be0c00000003"
+
+#endif
